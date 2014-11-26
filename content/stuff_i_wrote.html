@@ -1,0 +1,9 @@
+---
+title: Stuff I Wrote
+---
+Below are a few things I wrote when I was feeling creative.  Hope you enjoy them.
+
+<% items_with_tag('stuff_i_wrote').each do |i| %>
+<p class='context'><%= link_to(i[:title], i) %> - 
+<%= i[:description]%></p>
+<% end %>
