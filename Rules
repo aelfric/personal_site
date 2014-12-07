@@ -17,8 +17,16 @@ compile '/stylesheet/' do
   # don’t filter or layout
 end
 
-compile '/assets/stylesheets/' do
-    filter :relativize_paths, :type=> :css
+compile '/assets/stylesheets/*' do
+  # don’t filter or layout
+end
+
+route '/stylesheet/' do
+  '/style.css'
+end
+
+route '/assets/stylesheets/*' do
+    item.identifier.chop + ".css"
 end
 
 compile '*' do
@@ -29,14 +37,6 @@ compile '*' do
     layout 'default'
     filter :relativize_paths, :type=> :html
   end
-end
-
-route '/stylesheet/' do
-  '/style.css'
-end
-
-route '/assets/stylesheets/*' do
-    item.identifier.chop + ".css"
 end
 
 route '*' do
