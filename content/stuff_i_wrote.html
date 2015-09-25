@@ -3,7 +3,9 @@ title: Stuff I Wrote
 ---
 <p>Below are a few things I wrote when I was feeling creative.  Hope you enjoy them.</p>
 
-<% items_with_tag('stuff_i_wrote').each do |i| %>
+<% 
+items = items_with_tag('stuff_i_wrote').sort { |x, y| y[:created_at] <=> x[:created_at] }
+items.each do |i| %>
 <p class='context'><%= link_to(i[:title], i) %> <br>
 <%= i[:created_at] %> <br>
 <%= i[:description]%></p>
