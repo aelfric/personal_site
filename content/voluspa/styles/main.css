@@ -1,0 +1,100 @@
+/* - - - - - - - - - - - - - - - - - - - - -
+
+Author : Frank Riccobono
+
+Created : February 23, 2006
+
+
+- - - - - - - - - - - - - - - - - - - - - */
+
+
+
+/* ----- CSS ----- */
+
+
+
+*{
+	margin:0;
+	padding:0;
+}
+
+
+body{
+margin:0 0 0 0;
+
+	background: #292421 url(../img/06800.jpg) repeat-y fixed 50%;
+	font-size:80%;
+
+	font-family:"Georgia", serif;
+
+}
+
+img{display: block;
+	margin-left: auto;
+	margin-right: auto;}
+
+#next{display: block; text-align: right;}
+#last{display: block; text-align: left; float: left;}
+
+li {list-style-type: none;}
+li.title {border-bottom: 1px solid #cfb35b;}
+
+#PoemMenu {position: absolute;
+	text-align: center;
+	z-index: 1;
+	top: 20px;
+	left: 20px;
+	background: #000;
+	color: #cfb35b;
+	width: 20%;
+	border: 3px double #cfb35b;}
+
+#ExtraMenu {position: absolute;
+	text-align: center;
+	z-index: 2;
+	top: 20px;
+	right: 20px;
+	background: #000;
+	color: #cfb35b;
+	width: 20%;
+	border: 3px double #cfb35b;}
+
+#container p{
+	
+	display: block;
+	font: 14pt Georgia, Verdana, serif;
+	color: #cfb35b;
+	text-align: center;
+	padding: 5px 5px 5px 5px;
+	margin: 0 0 25px 0;
+	border: 3px double #cfb35b;
+	background: #000;}
+
+
+
+#container dl { border: 3px double #cfb35b;
+	background: #000; 
+	padding: 0.5em; } 
+
+#container dt { float: left;
+	clear: left; 
+	width: 100px; 
+	text-align: right; 
+	font-weight: bold; 
+	color: #cfb35b; } 
+
+#container dt:after { content: ":"; } 
+
+#container dd { margin: 0 0 0 110px; 
+	padding: 0 0 0.5em 0;
+	color: #cfb35b; 
+	text-align: left;}
+
+a{
+	color:#b97605; font-weight: bold;
+}
+
+
+abbr {	color: #B97605; font-weight: bold;}
+
+#container {width: 465px;}
