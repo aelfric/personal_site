@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="fb:app_id" content="187726658309149" />
     <title>Frank Riccobono - <%= @item[:title] %></title>
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/assets/stylesheets/base.css" >
@@ -16,13 +17,29 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
   <body>
+  <script>
+window.fbAsyncInit = function() {
+	FB.init({
+appId      : '187726658309149',
+xfbml      : true,
+version    : 'v2.7'
+});
+};
+
+(function(d, s, id){
+ var js, fjs = d.getElementsByTagName(s)[0];
+ if (d.getElementById(id)) {return;}
+ js = d.createElement(s); js.id = id;
+ js.src = "//connect.facebook.net/en_US/sdk.js";
+ fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));
+  </script>
   <div id="watermark"><img src='/assets/images/far_glyph.png' /></div>
   <div class='container'>
     <div class="three columns sidebar">
       <ul>
 	      <li><a href="/">Home</a></li>
 	      <li><a href="/stuff_i_wrote">Writings</a></li>
-        <li><a href="/cuny/">CUNY Work</a></li>
 </ul>
 	<hr>
 	<ul>
@@ -45,7 +62,17 @@
       </ul>
     </div>
     <div class="twelve columns offset-by-one content">
-      <%= yield %>
+	    <%= yield %>
+	    <div class="fb-like" 
+		    data-href="<%= "#{@config[:base_url]}#{@item.path}"%>" 
+		    data-layout="standard" 
+		    data-action="like" 
+		    data-show-faces="true">
+	    </div>
+      <div class="fb-comments" data-href="<%= "#{@config[:base_url]}#{@item.path}"%>" data-width="700" data-numposts="5"></div>
+      <p class="license">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" rel="dct:type">work</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.frankriccobono.com" property="cc:attributionName" rel="cc:attributionURL">Frank Riccobono</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+      </p>
     </div>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -57,5 +84,4 @@
 	  ga('send', 'pageview');
 
 	</script>
-  </body>
-</html>
+  </html>
