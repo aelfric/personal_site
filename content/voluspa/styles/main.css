@@ -63,6 +63,7 @@ li.title {border-bottom: 1px solid #cfb35b;}
 	
 	display: block;
 	font: 14pt Georgia, Verdana, serif;
+  line-height: 140%;
 	color: #cfb35b;
 	text-align: center;
 	padding: 5px 5px 5px 5px;
