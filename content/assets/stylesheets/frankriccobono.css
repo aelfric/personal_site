@@ -15,3 +15,62 @@ margin: 0 auto;
 text-align: center;
 width: 50%;
 }
+
+article p {
+  font-family: 'Libre Baskerville';
+  font-size: 100%;
+  line-height: 1.3750em; /* 22px */
+  margin: 0 0 1.3750em 0;
+}
+
+article h1, article h2 {
+  font-family: Oswald;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+article h2 {
+    font-size: 2.1875em; /* 35px */
+  line-height: 1.2571em; /* 44px */
+  margin-top: 0.6286em;  margin-bottom: 0.0000em;
+}
+
+article h1 {
+    font-size: 2.8750em; /* 46px */
+
+  line-height: 1.4348em; /* 66px */
+  margin-top: 0.4783em;  margin-bottom: 0.0000em;
+}
+
+article section {
+  margin: 44px 0 44px 0;
+}
+
+article .tagline {
+    font-family:  Oswald;
+    color: rgb(0,0,0,0.87);
+    background-color: #cfd8dc;
+    border-radius:  2px;
+    padding:  22px;
+    text-align: center;
+    display: block;
+  }
+
+
+.sidebar ul li {
+  font-family: Oswald, sans-serif;
+  font-size: 16px;
+  line-height: 1.375em;
+  margin: 0;
+ padding:  0.6875em 0 0.6875em 1em;
+}
+
+.sidebar li a {
+  display: block;
+  color: inherit;
+}
+
+.sidebar li:hover {
+  background-color:#546e7a;
+  color: rgba(255,255,255,0.87);
+}

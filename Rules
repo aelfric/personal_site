@@ -25,7 +25,7 @@ compile '/stylesheet/' do
   # don’t filter or layout
 end
 
-compile '/assets/stylesheets/*' do
+compile '/assets/stylesheets/*/' do
   # don’t filter or layout
 end
 
@@ -40,7 +40,7 @@ route '/stylesheet/' do
   '/style.css'
 end
 
-route '/assets/stylesheets/*' do
+route '/assets/stylesheets/*/' do
     item.identifier.chop + ".css"
 end
 
@@ -49,6 +49,9 @@ compile '/**/*' do
     # don’t filter binary items
   else
     filter :erb
+    if (!item[:tags].nil? && (item[:tags].include? "stuff_i_wrote"))
+      layout '/writing/'
+    end
     layout '/default/'
     filter :relativize_paths, :type=> :html
   end

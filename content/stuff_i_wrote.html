@@ -1,21 +1,26 @@
 ---
 title: Stuff I Wrote
-description: These are a few things I wrote when I was feeling creative.  Hope you enjoy them.  The items followed by red bullseyes are skits I wrote for my college sketch comedy and improv group, Off Center.
+description: These are a few things I've written when I was feeling creative.  Hope you enjoy them.  The items followed by red bullseyes are skits I wrote for my college sketch comedy and improv group, Off Center.  Anything followed by a music note is meant to be put to music.
 ---
 
+<article>
+  <h1>Stuff I Wrote</h1>
 <p><%= @item[:description] %></p>
 
 <% 
 items = items_with_tag('stuff_i_wrote').sort { |x, y| y[:created_at] <=> x[:created_at] }
 items.each do |i| %>
-<p class='context'><%= link_to(i[:title], i) %> 
+<section>
+<h2><%= link_to(i[:title], i) %>
 <% if (i[:tags] || []).include?("off_center")  %>
 <span style="color:#E8060A;"><i class="fa fa-bullseye" aria-hidden="true"></i></span>
 <% end %>
 <% if (i[:tags] || []).include?("music")  %>
 <span style="color:#000000;"><i class="fa fa-music" aria-hidden="true"></i></span>
-<% end %>
-<br>
+<% end %></h1>
+<p class="context">
 <%= i[:created_at] %> <br>
 <%= i[:description]%></p>
+</section>
 <% end %>
+</article>
