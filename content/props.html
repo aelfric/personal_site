@@ -1,0 +1,57 @@
+---
+title: Props
+description: 
+---
+<style>
+section {
+  line-height: 0;
+
+  -webkit-column-count: 3;
+  -webkit-column-gap:   2px;
+  -moz-column-count:    3;
+  -moz-column-gap:      2px;
+  column-count:         3;
+  column-gap:           2px;
+}
+
+section img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+    margin: 1px 0;
+}
+
+@media (max-width: 800px) {
+  section {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 400px) {
+  section {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
+}
+</style>
+<article>
+  <h1>Props</h1>
+  <p class="context">&ldquo;The Props Master is the director for all the 
+  inanimate actors in the show.&rdquo; &ndash; origin unknown.</p>
+  <p>I've been working in props for since 2009 for a variety of college
+  and community theatre productions.  While a Prop Master tends to do 
+  a lot of shopping for the show, my favorite part of the job is when I get
+  to make things.  These are photos of some of my recent favorite 
+  creations.</p>
+
+<section>
+  <% @items.find_all('/assets/images/Props/*/').each do |img| %>
+    <a href="<%= img.path %>">
+      <img src="<%= img.path(rep: :thumbnail) %>">
+    </a>
+    <% end %>
+</section>
+</article>
+

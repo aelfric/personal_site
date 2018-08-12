@@ -32,6 +32,14 @@ end
 compile 'voluspa/*' do
 end
 
+compile '/assets/images/Props/*/', rep: :thumbnail do
+  filter :thumbnailize, width: 200
+end
+
+route '/assets/images/Props/*/', rep: :thumbnail do
+  item.identifier.chop + '-thumbnail.jpg'
+end
+
 compile '/assets/*' do
   #nothing
 end
