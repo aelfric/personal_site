@@ -1,12 +1,12 @@
-class Thumbnailize < Nanoc::Filter
-  identifier :thumbnailize
+class OptimizeImage < Nanoc::Filter
+  identifier :optimize
   type       :binary
 
   def run(filename, params = {})
     system(
       'convert',
       '-resize',
-      params[:width].to_s,
+      '2000x2000',
       '-strip',
       '-interlace',
       'Plane',

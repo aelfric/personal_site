@@ -22,18 +22,26 @@ route '/sitemap/' do
 end
 
 compile '/stylesheet/' do
+  filter :rainpress
   # don’t filter or layout
 end
 
 compile '/assets/stylesheets/*/' do
+  filter :rainpress
   # don’t filter or layout
 end
 
+compile '/assets/js/*/' do
+end
 compile 'voluspa/*' do
 end
 
 compile '/assets/images/Props/*/', rep: :thumbnail do
   filter :thumbnailize, width: 200
+end
+
+compile '/assets/images/Props/*/' do
+  filter :optimize
 end
 
 route '/assets/images/Props/*/', rep: :thumbnail do
@@ -52,6 +60,9 @@ route '/assets/stylesheets/*/' do
     item.identifier.chop + ".css"
 end
 
+route '/assets/js/*/' do
+    item.identifier.chop + ".min.js"
+end
 compile '/**/*' do
   if item.binary?
     # don’t filter binary items
