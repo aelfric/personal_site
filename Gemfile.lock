@@ -37,7 +37,7 @@ GEM
       mini_portile2 (~> 2.3.0)
     parallel (1.12.1)
     public_suffix (3.0.2)
-    rack (2.0.5)
+    rack (2.1.0)
     rainpress (1.0.1)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
