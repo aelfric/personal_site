@@ -40,7 +40,7 @@ section img {
   <h1>Props</h1>
   <p class="context">&ldquo;The Props Master is the director for all the 
   inanimate actors in the show.&rdquo; &ndash; origin unknown.</p>
-  <p>I've been working in props for since 2009 for a variety of college
+  <p>I've been working in props since 2009 for a variety of college
   and community theatre productions.  While a Prop Master tends to do 
   a lot of shopping for the show, my favorite part of the job is when I get
   to make things.  These are photos of some of my recent favorite 
@@ -48,10 +48,13 @@ section img {
 
 <section>
   <% @items.find_all('/assets/images/Props/*/').each do |img| %>
-    <a href="<%= img.path %>">
+    <a href="<%= img.path %>" class="prop-image">
       <img src="<%= img.path(rep: :thumbnail) %>">
     </a>
     <% end %>
 </section>
 </article>
-
+<script src="/assets/js/Luminous.min.js" />
+<script>
+new LuminousGallery(document.querySelectorAll(".prop-image"));
+</script>

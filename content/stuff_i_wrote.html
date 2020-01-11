@@ -13,10 +13,10 @@ items.each do |i| %>
 <section>
 <h2><%= link_to(i[:title], i) %>
 <% if (i[:tags] || []).include?("off_center")  %>
-<span style="color:#E8060A;"><i class="fa fa-bullseye" aria-hidden="true"></i></span>
+<svg class="svg-icon" style="fill: #E8060A" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 432c-101.69 0-184-82.29-184-184 0-101.69 82.29-184 184-184 101.69 0 184 82.29 184 184 0 101.69-82.29 184-184 184zm0-312c-70.69 0-128 57.31-128 128s57.31 128 128 128 128-57.31 128-128-57.31-128-128-128zm0 192c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64z"/></svg>
 <% end %>
 <% if (i[:tags] || []).include?("music")  %>
-<span style="color:#000000;"><i class="fa fa-music" aria-hidden="true"></i></span>
+<svg class="svg-icon" style="fill: #000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M470.38 1.51L150.41 96A32 32 0 0 0 128 126.51v261.41A139 139 0 0 0 96 384c-53 0-96 28.66-96 64s43 64 96 64 96-28.66 96-64V214.32l256-75v184.61a138.4 138.4 0 0 0-32-3.93c-53 0-96 28.66-96 64s43 64 96 64 96-28.65 96-64V32a32 32 0 0 0-41.62-30.49z"/></svg>
 <% end %></h1>
 <p class="context">
 <%= i[:created_at] %> <br>

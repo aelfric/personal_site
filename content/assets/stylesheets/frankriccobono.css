@@ -74,3 +74,7 @@ article .tagline {
   background-color:#546e7a;
   color: rgba(255,255,255,0.87);
 }
+
+.svg-icon {
+  height: 1em;
+}

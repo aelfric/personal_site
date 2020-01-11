@@ -1,0 +1,430 @@
+<style>
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+/* Zebra striping */
+
+tr:nth-of-type(odd) { background: #f2f2f2; }
+
+th {
+  background: #cfd8dc;
+  color: rgba(0,0,0,0.87);
+  font-weight: 600;
+}
+
+td, th {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+  text-align: center;
+    font-family: 'Libre Baskerville';
+}
+tr td:first-child {
+   font-style: italic;
+}
+/*Mobile View*/
+@media only screen and  (max-width: 760px) {
+
+td, tr { display: block; }
+
+thead tr {
+  opacity: 0;
+}
+
+tr { border: 1px solid #cfd8dc; }
+
+tr + tr { margin-top: 1.5em; }
+
+td {
+  /* make like a "row" */
+  border: none;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  padding-left: 50%;
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+td:before {
+  content: attr(data-label);
+  display: inline-block;
+  line-height: 1.5;
+  margin-left: -100%;
+  width: 100%;
+  white-space: nowrap;
+    font-weight: bold;
+}
+}
+</style>
+
+<article>
+  <h1>Acting</h1>
+  <p>
+I started acting in high school  Since then, I have spent quite a bit of time on stage in an amateur capacity.  Below are some of the roles I&rsquo;ve played listed for posterity.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Show</th>
+      <th>Role</th>
+      <th>Where</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Show">
+        The Full Monty
+      </td>
+      <td data-label="Role">
+        Gary/Tony/Ensemble
+      </td>
+      <td data-label="Where">
+        Old Library Theatre<br>
+        Fair Lawn, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        Julius Caesar
+      </td>
+      <td data-label="Role">
+        Caius Ligarius et al.
+      </td>
+      <td data-label="Where">
+        Old Library Theatre<br>
+        Fair Lawn, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        She Loves Me
+      </td>
+      <td data-label="Role">
+        Ensemble
+      </td>
+      <td data-label="Where">
+        Summit Playhouse<br>
+        Summit, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        A Comedy of Errors
+      </td>
+      <td data-label="Role">
+        Balthazar
+      </td>
+      <td data-label="Where">
+        DeBaun Performing Arts Center<br>
+        Hoboken, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        Instant Harmony
+      </td>
+      <td data-label="Role">
+        Chris Watkins
+      </td>
+      <td data-label="Where">
+        Old Library Theatre<br>
+        Fair Lawn, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        Instant Harmony
+      </td>
+      <td data-label="Role">
+        Chris Watkins
+      </td>
+      <td data-label="Where">
+        Old Library Theatre<br>
+        Fair Lawn, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        Bat Boy: The Musical
+      </td>
+      <td data-label="Role">
+        Mrs. Taylor
+      </td>
+      <td data-label="Where">
+        Old Library Theatre<br>
+        Fair Lawn, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        The Robber Bridegroom
+      </td>
+      <td data-label="Role">
+        Ensemble
+      </td>
+      <td data-label="Where">
+        Old Library Theatre<br>
+        Fair Lawn, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        Schoolhouse Rock Live!
+      </td>
+      <td data-label="Role">
+        Frank
+      </td>
+      <td data-label="Where">
+        DeBaun Performing Arts Center<br>
+        Hoboken, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        Pippin
+      </td>
+      <td data-label="Role">
+        Player
+      </td>
+      <td data-label="Where">
+        Old Library Theatre<br>
+        Fair Lawn, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        Assassins
+      </td>
+      <td data-label="Role">
+        Ensemble
+      </td>
+      <td data-label="Where">
+        Old Library Theatre<br>
+        Fair Lawn, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        I Love You, You’re Perfect, Now Change
+      </td>
+      <td data-label="Role">
+        Various
+      </td>
+      <td data-label="Where">
+        DeBaun Performing Arts Center<br>
+        Hoboken, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        Oliver!
+      </td>
+      <td data-label="Role">
+        Ensemble / Knife Grinder
+      </td>
+      <td data-label="Where">
+        Old Library Theatre<br>
+        Fair Lawn, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        A Midsummer Night’s Dream
+      </td>
+      <td data-label="Role">
+        Egeus
+      </td>
+      <td data-label="Where">
+        DeBaun Performing Arts Center<br>
+        Hoboken, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        Chess
+      </td>
+      <td data-label="Role">
+        Russian Ensemble
+      </td>
+      <td data-label="Where">
+        DeBaun Performing Arts Center<br>
+        Hoboken, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        Much Ado About Nothing
+      </td>
+      <td data-label="Role">
+        Leonato
+      </td>
+      <td data-label="Where">
+        DeBaun Performing Arts Center<br>
+        Hoboken, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        The World Goes ‘Round
+      </td>
+      <td data-label="Role">
+        Ensemble
+      </td>
+      <td data-label="Where">
+        DeBaun Performing Arts Center<br>
+        Hoboken, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        Tom Foolery
+      </td>
+      <td data-label="Role">
+        Frank
+      </td>
+      <td data-label="Where">
+        DeBaun Performing Arts Center<br>
+        Hoboken, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        Pirates of Penzance
+      </td>
+      <td data-label="Role">
+        Second Police Officer
+      </td>
+      <td data-label="Where">
+        The Theater Company<br>
+        Hoboken, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        All in the Timing
+      </td>
+      <td data-label="Role">
+        Milton / Trotsky
+      </td>
+      <td data-label="Where">
+        Radburn Players<br>
+        Fair Lawn, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        Goldilocks and the Christmas Bears
+      </td>
+      <td data-label="Role">
+        Papa Bear
+      </td>
+      <td data-label="Where">
+        Westchester Sandbox Theatre<br>
+        Mamaroneck, NY
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        Mrs. Bob Cratchit’s Wild Christmas Binge
+      </td>
+      <td data-label="Role">
+        Kenneth Lay / Mr. Fezziwig / Beadle from Oliver / Suicidal Dutchman / George Bailey / Della Reese
+      </td>
+      <td data-label="Where">
+        Westchester Sandbox Theatre<br>
+        Mamaroneck, NY
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        A Christmas Carol
+      </td>
+      <td data-label="Role">
+        Portly Gentleman / Fezziwig
+      </td>
+      <td data-label="Where">
+        Westchester Sandbox Theatre<br>
+        Mamaroneck, NY
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        Suessical
+      </td>
+      <td data-label="Role">
+        Gen. Schmitz
+      </td>
+      <td data-label="Where">
+        The Hope Players<br>
+        Somers, NY
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        The Actor’s Nightmare
+      </td>
+      <td data-label="Role">
+        George Spelvin
+      </td>
+      <td data-label="Where">
+        DeBaun Performing Arts Center<br>
+        Hoboken, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        Beauty and the Beast
+      </td>
+      <td data-label="Role">
+        Bookseller / Ensemble
+      </td>
+      <td data-label="Where">
+        Stevens Dramatic Society<br>
+        Hoboken, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        Much Ado About Nothing
+      </td>
+      <td data-label="Role">
+        Friar Francis
+      </td>
+      <td data-label="Where">
+        Stevens Dramatic Society<br>
+        Hoboken, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        A Christmas Carol
+      </td>
+      <td data-label="Role">
+        Bob Cratchit
+      </td>
+      <td data-label="Where">
+        The Theater Company<br>
+        Hoboken, NJ
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Show">
+        The Mystery of Edwin Drood
+      </td>
+      <td data-label="Role">
+        Neville Landless
+      </td>
+      <td data-label="Where">
+        Stevens Dramatic Society<br>
+        Hoboken, NJ
+      </td>
+    </tr>
+  </tbody>
+</table>
+</article>
