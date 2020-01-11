@@ -40,9 +40,18 @@ version    : 'v3.0'
  fjs.parentNode.insertBefore(js, fjs);
  }(document, 'script', 'facebook-jssdk'));
   </script>
-  <div id="watermark"><img src='/assets/images/far_glyph.png' /></div>
+  <div class="watermark">
+    <svg viewBox="0 0 442.13 349.92">
+      <use xlink:href="/assets/images/far-glyph.svg#glyph"></use>
+    </svg>
+  </div>
   <div class='container'>
     <div class="three columns sidebar">
+  <div class="watermark">
+    <svg viewBox="0 0 442.13 349.92">
+      <use xlink:href="/assets/images/far-glyph.svg#glyph"></use>
+    </svg>
+  </div>
       <ul>
 	      <li><a href="/">
             <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg>
@@ -76,7 +85,7 @@ version    : 'v3.0'
 	</a></li>
       </ul>
     </div>
-    <div class="twelve columns offset-by-one content">
+    <div class="eleven columns offset-by-one content">
 	    <%= yield %>
 	    <div class="fb-like" 
 		    data-href="<%= "#{@config[:base_url]}#{@item.path}"%>" 
@@ -84,7 +93,6 @@ version    : 'v3.0'
 		    data-action="like" 
 		    data-show-faces="true">
 	    </div>
-      <div class="fb-comments" data-href="<%= "#{@config[:base_url]}#{@item.path}"%>" data-width="700" data-numposts="5"></div>
       <p class="license">
       <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" rel="dct:type">work</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.frankriccobono.com" property="cc:attributionName" rel="cc:attributionURL">Frank Riccobono</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
       </p>
@@ -100,5 +108,4 @@ version    : 'v3.0'
 	  ga('send', 'pageview');
 
 	</script>
-  <script src="https://kit.fontawesome.com/a227edf621.js"></script>
   </html>

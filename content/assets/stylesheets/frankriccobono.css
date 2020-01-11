@@ -1,11 +1,20 @@
 
-#watermark {
+.watermark {
 	opacity: 0.5;
-	position: fixed;
+  position: fixed;
+  fill: #054d38;
+  width: 350px;
+}
+
+.sidebar .watermark {
+  opacity: 0;
 }
 
 @media (max-width: 768px) {
-	#watermark {opacity: 0.2;}
+	.sidebar .watermark {opacity: 0.1;}
+  .container {
+    padding: 1em;
+  }
 }
 
 .license {
@@ -71,10 +80,20 @@ article .tagline {
 }
 
 .sidebar li:hover {
-  background-color:#546e7a;
+  background-color:#054D38;
   color: rgba(255,255,255,0.87);
 }
 
 .svg-icon {
   height: 1em;
+  fill: currentColor;
+}
+
+body {
+  background-color: #169873;
+}
+
+.container {
+  background-color: #fafafa;
+  box-shadow: 0 0 5px;
 }
