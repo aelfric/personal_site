@@ -4,6 +4,7 @@
   position: fixed;
   fill: #054d38;
   width: 350px;
+  pointer-events: none
 }
 
 .sidebar .watermark {
