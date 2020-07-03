@@ -61,7 +61,7 @@ GEM
       tomlrb (~> 1.2)
       tty-platform (~> 0.2)
       zeitwerk (~> 2.1)
-    nokogiri (1.10.7)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     parallel (1.19.1)
     pastel (0.7.3)
