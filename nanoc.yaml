@@ -79,4 +79,4 @@ watcher:
   notify_on_compilation_failure: true
 
 
-base_url:  http://www.frankriccobono.com
+base_url:  https://www.frankriccobono.com
