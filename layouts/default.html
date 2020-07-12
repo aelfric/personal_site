@@ -20,26 +20,13 @@
     <meta property="og:image" content="<%= @item[:img] %>" />
     <meta name="twitter:image" content="<%= @item[:img] %>">
     <% end %>
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700|Oswald:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700|Oswald:400&display=swap" rel="stylesheet">
   </head>
   <body>
-  <script>
-window.fbAsyncInit = function() {
-	FB.init({
-appId      : '187726658309149',
-xfbml      : true,
-version    : 'v3.0'
-});
-};
+  <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0&appId=187726658309149&autoLogAppEvents=1" nonce="FOKrbAYI"/>
 
-(function(d, s, id){
- var js, fjs = d.getElementsByTagName(s)[0];
- if (d.getElementById(id)) {return;}
- js = d.createElement(s); js.id = id;
- js.src = "//connect.facebook.net/en_US/sdk.js";
- fjs.parentNode.insertBefore(js, fjs);
- }(document, 'script', 'facebook-jssdk'));
-  </script>
   <div class="watermark">
     <svg viewBox="0 0 442.13 349.92">
       <use xlink:href="/assets/images/far-glyph.svg#glyph"></use>
@@ -91,6 +78,7 @@ version    : 'v3.0'
 		    data-href="<%= "#{@config[:base_url]}#{@item.path}"%>" 
 		    data-layout="standard" 
 		    data-action="like" 
+        data-share="true"
 		    data-show-faces="true">
 	    </div>
       <p class="license">
