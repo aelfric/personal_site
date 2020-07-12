@@ -44,6 +44,10 @@ compile '/assets/images/Props/*/' do
   filter :optimize
 end
 
+compile '/assets/images/*.png' do
+  filter :optimize
+end
+
 route '/assets/images/Props/*/', rep: :thumbnail do
   item.identifier.chop + '-thumbnail.jpg'
 end
