@@ -21,6 +21,13 @@ route '/sitemap/' do
     item.identifier.chop + '.xml'
 end
 
+compile '/robots/' do
+end
+
+route '/robots/' do
+  item.identifier.chop + '.txt'
+end
+
 compile '/stylesheet/' do
   filter :rainpress
   # don’t filter or layout
@@ -67,6 +74,7 @@ end
 route '/assets/js/*/' do
     item.identifier.chop + ".min.js"
 end
+
 compile '/**/*' do
   if item.binary?
     # don’t filter binary items

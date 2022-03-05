@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /assets
+Allow: /assets/images
+Sitemap:  https://www.frankriccobono.com/sitemap.xml
