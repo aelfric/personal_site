@@ -34,6 +34,7 @@ jobs:
     - name: Run tests
       run: bundle exec nanoc co
     - name: 'Upload Artifact'
+      if: always()
       uses: actions/upload-artifact@v4
       with:
         name: crash_log.txt
