@@ -32,8 +32,8 @@ jobs:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Install ImageMagick
-        uses: mfinelli/setup-imagemagick@v6
-        with:
-          cache: true
+      uses: mfinelli/setup-imagemagick@v6
+      with:
+        cache: true
     - name: Run tests
       run: bundle exec nanoc -Vw co
