@@ -79,7 +79,7 @@ GEM
       stringio
     public_suffix (5.0.0)
     racc (1.8.1)
-    rack (2.2.8.1)
+    rack (2.2.14)
     rack-livereload (0.3.17)
       rack
     rainpress (1.0.1)
