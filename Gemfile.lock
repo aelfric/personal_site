@@ -94,7 +94,7 @@ GEM
     slow_enumerator_tools (1.1.0)
     stringio (3.0.2)
     temple (0.9.1)
-    thor (1.2.1)
+    thor (1.4.0)
     tilt (2.0.11)
     tty-color (0.6.0)
     tty-command (0.10.1)
