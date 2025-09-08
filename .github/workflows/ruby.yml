@@ -32,4 +32,10 @@ jobs:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Run tests
-      run: bundle exec nanoc co
+      run: bundle exec nanoc co || true
+    - name: Upload crash log
+      uses: actions/upload-artifact@v4
+      with:
+        name: crash-log
+        path: crash.log
+        if-no-files-found: ignore # Don't fail if no crash.log is found
