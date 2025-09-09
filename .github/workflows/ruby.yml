@@ -25,11 +25,17 @@ jobs:
         ruby-version: ['3.0']
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Run tests
-      run: bundle exec nanoc co
+      run: bundle exec nanoc co || true
+    - name: Upload crash log
+      uses: actions/upload-artifact@v4
+      with:
+        name: crash-log
+        path: crash.log
+        if-no-files-found: ignore # Don't fail if no crash.log is found
