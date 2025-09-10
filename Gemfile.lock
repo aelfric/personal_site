@@ -12,7 +12,7 @@ GEM
       eventmachine (~> 1.2)
       listen (~> 3.0)
       rack-livereload (~> 0.3)
-    builder (3.2.4)
+    builder (3.3.0)
     colored (1.2)
     concurrent-ruby (1.1.10)
     cri (2.15.11)
