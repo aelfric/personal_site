@@ -39,6 +39,8 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: crash-log
+        path: crash.log
+        if-no-files-found: ignore # Don't fail if no crash.log is found
     - name: Deploy FTP
       if: github.ref == 'refs/heads/master'
       uses: SamKirkland/FTP-Deploy-Action@v4.3.6
@@ -49,6 +51,3 @@ jobs:
           protocol: ftps
           local-dir: ./output/
           state-name: .main-site-deploy.json
-
-        path: crash.log
-        if-no-files-found: ignore # Don't fail if no crash.log is found
