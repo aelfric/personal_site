@@ -39,5 +39,16 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: crash-log
+    - name: Deploy FTP
+      if: github.ref == 'refs/heads/master'
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+      with:
+          server: frankriccobono.com
+          username: ${{secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./output/
+          state-name: .main-site-deploy.json
+
         path: crash.log
         if-no-files-found: ignore # Don't fail if no crash.log is found
