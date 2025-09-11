@@ -46,7 +46,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.6
       with:
           server: frankriccobono.com
-          username: ${{secrets.FTP_USER }}
+          username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           port: 21
