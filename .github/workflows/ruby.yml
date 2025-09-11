@@ -52,4 +52,4 @@ jobs:
           port: 21
           local-dir: ./output/
           state-name: .main-site-deploy.json
-          passive: true
+          log-level: verbose
