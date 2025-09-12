@@ -44,6 +44,8 @@ jobs:
     - name: 📂 Sync Files
       uses: SamKirkland/web-deploy@v1
       with:
+        source-path: ./output/
+        destination-path: ./output/
         target-server: frankriccobono.com
         remote-user: ${{ secrets.FTP_USER }}
         private-ssh-key: ${{ secrets.SSH_KEY }}
