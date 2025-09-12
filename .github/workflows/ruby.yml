@@ -41,15 +41,9 @@ jobs:
         name: crash-log
         path: crash.log
         if-no-files-found: ignore # Don't fail if no crash.log is found
-    - name: 📂 Sync files
-      if: github.ref == 'refs/heads/master'
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+    - name: 📂 Sync Files
+      uses: SamKirkland/web-deploy@v1
       with:
-          server: frankriccobono.com
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          port: 21
-          local-dir: ./output/
-          state-name: .main-site-deploy.json
-          log-level: verbose
+        target-server: frankriccobono.com
+        remote-user: ${{ secrets.FTP_USER }}
+        private-ssh-key: ${{ secrets.SSH_KEY }}
