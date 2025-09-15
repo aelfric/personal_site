@@ -42,6 +42,7 @@ jobs:
         path: crash.log
         if-no-files-found: ignore # Don't fail if no crash.log is found
     - name: 📂 Sync Files
+      if: github.ref == 'refs/heads/main'
       uses: SamKirkland/web-deploy@v1
       with:
         source-path: ./output/
