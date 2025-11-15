@@ -24,7 +24,7 @@ GEM
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
     ffi (1.17.2)
-    haml (7.0.1)
+    haml (7.0.2)
       temple (>= 0.8.2)
       thor
       tilt
