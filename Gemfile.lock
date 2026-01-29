@@ -24,7 +24,7 @@ GEM
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
     ffi (1.17.2)
-    haml (7.1.0)
+    haml (7.2.0)
       temple (>= 0.8.2)
       thor
       tilt
@@ -103,8 +103,8 @@ GEM
       rbtree
       set (~> 1.0)
     temple (0.10.4)
-    thor (1.4.0)
-    tilt (2.6.1)
+    thor (1.5.0)
+    tilt (2.7.0)
     tty-color (0.6.0)
     tty-command (0.10.1)
       pastel (~> 0.8)
