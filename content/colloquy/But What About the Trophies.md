@@ -64,7 +64,7 @@ div  {
 }
 ```
 
-![Example certificate](/assets/images/Regis_First_Speech_certificates_2020-09-26.svg)
+![Example certificate](/assets/images/Regis_First_Speech_certificates_2020-09-26.png)
 
 Because certificates are fixed-size documents, HTML print styles made it easy to produce consistent, printable layouts.
 
