@@ -117,7 +117,7 @@ route '/**/*' do
 	  item.identifier.chop + '.js'
   else
     # Write item with identifier /foo/ to /foo/index.html
-    item.identifier + 'index.html'
+    item.identifier.to_s.gsub(' ', '-').downcase + 'index.html'
   end
 end
 

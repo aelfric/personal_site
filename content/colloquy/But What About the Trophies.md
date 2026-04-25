@@ -1,12 +1,16 @@
------
+---
 title:  But What About the Trophies?
 description:  The is the first of a series of articles about a software application I wrote originally to help out the New York Catholic Forensic League. It covers the motivations and core design of the system.
 tags: stuff_i_wrote, colloquy
 img: https://www.frankriccobono.com/assets/images/trophies.jpg
+img_width: 1080
+img_height: 810
 created_at: 2026-04-25
 kind: article
------
+---
+
 ## Backstory
+
 It was the fall of 2020.  A new school year had just started, but amidst the continuing pandemic safety measures, we in the speech and debate community were wondering whether we would be able to continue the activity in some form or another.  Thanks to a video platform developed that summer by the National Speech and Debate Association, we were fairly confident we could hold virtual tournaments, but we had another practical issue: how would we recognize the winners?
 
 Speech and debate is primarily an educational activity.  We don't encourage students to participate for the trophies, but at the same time, doing well at a tournament is difficult. We still wanted to reward these students for their success.  Trophies were the league's largest expense when running in-person tournaments, and mailing them out after virtual tournaments would have been prohibitive.
@@ -63,11 +67,13 @@ div  {
 ![Example certificate](/assets/images/Regis_First_Speech_certificates_2020-09-26.svg)
 
 Because certificates are fixed-size documents, HTML print styles made it easy to produce consistent, printable layouts.
+
 ## Templates
 
 The core idea was to extract data from [Tabroom](https://www.tabroom.com), the software we used to run tournaments and use it to generate the certificates.  Tabroom was built with a programmer's mindset and makes much of its data available as comma-separated-value (CSV) exports. There were several types of reports we wanted to generate from this data so I decided the best starting point was to parse the files once and import the data into a database. 
 
 The basic workflow would be:
+
 - Import CSV results
 - Store in database for reuse
 - Render certificates using a template
