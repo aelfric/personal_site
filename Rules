@@ -14,7 +14,7 @@
 #   because “*” matches zero or more characters.
 
 compile '/sitemap/' do
-    filter :haml
+    filter :erb
 end
 
 route '/sitemap/' do
