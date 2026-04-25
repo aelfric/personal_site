@@ -6,3 +6,7 @@ gem 'builder'
 gem 'adsf'
 gem 'rainpress'
 gem 'adsf-live'
+gem 'kramdown'
+group 'nanoc' do
+  gem 'nanoc-live'
+end

@@ -43,6 +43,7 @@ end
 compile 'voluspa/*' do
 end
 
+
 compile '/assets/images/Props/*/', rep: :thumbnail do
   filter :thumbnailize, width: 200
 end
@@ -79,11 +80,16 @@ compile '/**/*' do
   if item.binary?
     # don’t filter binary items
   else
-    filter :erb
+    if item[:extension] == 'md'
+      filter :kramdown
+    else
+      filter :erb
+    end
     if (!item[:tags].nil? && (item[:tags].include? "stuff_i_wrote"))
       layout '/writing/'
+    else
+      layout '/default/'
     end
-    layout '/default/'
     filter :relativize_paths, :type=> :html
   end
 end
