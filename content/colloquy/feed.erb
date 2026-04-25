@@ -1,0 +1,1 @@
+<%= atom_feed limit: 50, author_name: "Frank Riccobono", author_uri: "https://frankriccobono.com", articles: items_with_tag('colloquy').sort { |x, y| y[:created_at] <=> x[:created_at]}, title: "The Colloquy of Aelfric5578" %>

@@ -1,0 +1,8 @@
+<article>
+  <h1><%= @item[:title] %></h1>
+  <p>by Frank Riccobono</p>
+  <p class='context'><%= item[:description] %></p>
+  <%= yield %>
+  <p><%=link_to("Like what you read?  There's more!", '/colloquy/', :class=>"tagline") %></p>
+</article>
+<link rel="stylesheet" href="/assets/stylesheets/code.css" >

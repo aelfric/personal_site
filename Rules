@@ -76,20 +76,31 @@ route '/assets/js/*/' do
     item.identifier.chop + ".min.js"
 end
 
+compile '/colloquy/feed/' do
+  filter :erb
+end
+
+route '/colloquy/feed/' do
+  item.identifier.chop + '.xml'
+end
+
 compile '/**/*' do
   if item.binary?
     # don’t filter binary items
   else
     if item[:extension] == 'md'
-      filter :kramdown
+      filter :kramdown, input: "GFM", syntax_highlighter: 'rouge'
     else
       filter :erb
     end
-    if (!item[:tags].nil? && (item[:tags].include? "stuff_i_wrote"))
-      layout '/writing/'
-    else
-      layout '/default/'
+    if (!item[:tags].nil? )
+      if (item[:tags].include? "colloquy")
+        layout '/colloquy/'
+      elsif (item[:tags].include? "stuff_i_wrote")
+        layout '/writing/'
+      end
     end
+    layout '/default/'
     filter :relativize_paths, :type=> :html
   end
 end

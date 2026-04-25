@@ -33,6 +33,17 @@ article p {
   margin: 0 0 1.3750em 0;
 }
 
+article code {
+  line-height: 1.3750em; /* 22px */
+  margin: 0 0 1.3750em 0;
+  tab-size: 2;
+}
+
+
+article pre.highlight { 
+    overflow-x: auto;
+}
+
 article h1, article h2 {
   font-family: Oswald;
   font-weight: 400;
@@ -42,14 +53,41 @@ article h1, article h2 {
 article h2 {
     font-size: 2.1875em; /* 35px */
   line-height: 1.2571em; /* 44px */
-  margin-top: 0.6286em;  margin-bottom: 0.0000em;
+  margin: 0.6286em 0; 
 }
 
 article h1 {
     font-size: 2.8750em; /* 46px */
 
   line-height: 1.4348em; /* 66px */
-  margin-top: 0.4783em;  margin-bottom: 0.0000em;
+  margin: 0.4783em 0;
+}
+
+article div + p {
+  margin-top: 1.3750em;
+}
+
+article table {
+  border-collapse: collapse;
+  margin: 1.3750em 0;
+  width: 100%;
+}
+
+article th {
+  font-family: Oswald;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.3750em; /* 22px */
+  padding: 0.6875em;
+  text-align: left;
+}
+
+article td {
+  font-family: "Libre Baskerville";
+  font-size: 16px;
+  line-height: 1.3750em; /* 22px */
+  border-top: 1px solid #cfd8dc;
+  padding: 0.6875em;
 }
 
 article section {
@@ -83,6 +121,22 @@ article .tagline {
 .sidebar li:hover {
   background-color:#054D38;
   color: rgba(255,255,255,0.87);
+}
+
+article img {
+  max-width: 100%;
+}
+
+article ul {
+  list-style: disc;
+  margin: 0 0 1.3750em 1.3750em;
+}
+
+article li {
+  font-family: "Libre Baskerville";
+  font-size: 16px;
+  line-height: 1.3750em; /* 22px */
+  margin: 0.6875em 0;
 }
 
 .svg-icon {

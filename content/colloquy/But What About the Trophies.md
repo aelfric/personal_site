@@ -1,7 +1,7 @@
 -----
 title:  But What About the Trophies?
-description:  
-tags: stuff_i_wrote
+description:  The is the first of a series of articles about a software application I wrote originally to help out the New York Catholic Forensic League. It covers the motivations and core design of the system.
+tags: stuff_i_wrote, colloquy
 created_at: 2026-04-25
 -----
 ## Backstory
@@ -12,8 +12,11 @@ Speech and debate is primarily an educational activity.  We don't encourage stud
 Our league director came to me with an idea: certificates.  More specifically, we needed a way to generate hundreds of printable certificates automatically, personalize them, and distribute them digitally.  Here's how I did it.
 
 ## Layout
-<!--image-->
-Maybe I was just biased from years of working in web development, but when I looked at the sample certificates we had printed, I saw a familiar box model.  The layout was primarily centered text with some borders and spacing. I decided to use HTML and CSS. A certificate can be represented as just a few lines of text and markup.  The structure was straightforward.
+
+Maybe I was just biased from years of working in web development, but when I looked at the sample certificates we had printed, I saw a familiar box model.
+![The original reference image for a certificate](/assets/images/Reference_Certificate.svg)
+
+The layout was primarily centered text with some borders and spacing. I decided to use HTML and CSS. A certificate can be represented as just a few lines of text and markup.  The structure was straightforward.
 
 ```html
 <div class="certificate_border gold finalist">
@@ -55,7 +58,7 @@ div  {
 }
 ```
 
-<!--image-->
+![Example certificate](/assets/images/Regis_First_Speech_certificates_2020-09-26.svg)
 
 Because certificates are fixed-size documents, HTML print styles made it easy to produce consistent, printable layouts.
 ## Templates
@@ -80,39 +83,40 @@ Students compete in one of several categories.  For each category, I would get a
 Since I would be the one generating the certificates, I used an H2 file-based database.  We were all working remotely so both the application and the database file  lived on my desktop.  When I needed to generate something, I could start up the application using Quarkus development mode.
 
 To interact with the application, I created a REST API that could power a small React front end.  Below is a simplified version of the JAX-RS resource.  Most of the endpoints are general CRUD operations.  These endpoints provided for the following workflow:
-1) create a tournament with basic information like the name, date, and virtual host school
-2) create a list of events in the tournament
-3) upload the CSV results for each event
-4) render the certificates into the template
+
+1. create a tournament with basic information like the name, date, and virtual host school
+2. create a list of events in the tournament
+3. upload the CSV results for each event
+4. render the certificates into the template
 
 ```java
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class CertificatesResource {
-    @Inject
-    Template certificate;
-    
-    @POST
-    @Path("/tournaments")
-    public Tournament createTournament(Tournament tournament);
-    
-    @POST
-    @Path("/events")
-    public Tournament createEvents(EventList eventList);
-    
-    @POST
-    @Consumes(MediaType.MULTIPART_FORM_DATA)
-    @Path("/tournaments/{tournamentId}/events/{eventId}/results")
-    public Tournament addResults(
-	    @MultipartForm MultipartBody body,
-        @PathParam("eventId") int eventId,
-        @PathParam("tournamentId") long tournamentId
-    );
-    
-    @GET
-    @Produces(MediaType.TEXT_HTML)
-    @Path("/tournaments/{id}/certificates")
-    public String generateCertificates(@PathParam("id") long tournamentId);
+	@Inject
+	Template certificate;
+	
+	@POST
+	@Path("/tournaments")
+	public Tournament createTournament(Tournament tournament);
+	
+	@POST
+	@Path("/events")
+	public Tournament createEvents(EventList eventList);
+	
+	@POST
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Path("/tournaments/{tournamentId}/events/{eventId}/results")
+	public Tournament addResults(
+		@MultipartForm MultipartBody body,
+		@PathParam("eventId") int eventId,
+		@PathParam("tournamentId") long tournamentId
+	);
+	
+	@GET
+	@Produces(MediaType.TEXT_HTML)
+	@Path("/tournaments/{id}/certificates")
+	public String generateCertificates(@PathParam("id") long tournamentId);
 }
 ```
 
@@ -123,31 +127,31 @@ The `generateCertificates` endpoint would render the Qute template.
 {#for event in tournament.events}
 {#for result in event.results}
 <div style="overflow: hidden; height: 8.5in; width: 11in; padding: 0.5in">
-    <div class="certificate_border {result.certColor}">
-        <div class="certificate_body">
-            <img src="/nycfl-logo.svg" height="100px"/>
-            <p class="nycfl">New York Catholic Forensic League</p>
-            <p class="award_certificate">Award Certificate</p>
-            <div class="tournament_details">
-                <p class="host">{tournament.host}</p>
-                <p class="tournament_name">{tournament.name}</p>
-                <p class="tournament_date">{tournament.longDate}</p>
-            </div>
-            <p class="place">{result.placeString}</p>
-            <p class="before_text">This certificate is given to</p>
-            <p class="name">{result.name}</p>
-            <p class="before_text">to recognize outstanding performance in the category of</p>
-            <p class="event_name">{event.name}</p>
-            <p class="signature_block">
-                <span class="signature">Thomas Beck</span>
-                <span class="position">NYCFL President</span>
-            </p>
-            <p class="date_block">
-                <span class="signature-date">{tournament.shortDate}</span>
-                <span class="date-label">Date</span>
-            </p>
-        </div>
-    </div>
+	<div class="certificate_border {result.certColor}">
+		<div class="certificate_body">
+			<img src="/nycfl-logo.svg" height="100px"/>
+			<p class="nycfl">New York Catholic Forensic League</p>
+			<p class="award_certificate">Award Certificate</p>
+			<div class="tournament_details">
+				<p class="host">{tournament.host}</p>
+				<p class="tournament_name">{tournament.name}</p>
+				<p class="tournament_date">{tournament.longDate}</p>
+			</div>
+			<p class="place">{result.placeString}</p>
+			<p class="before_text">This certificate is given to</p>
+			<p class="name">{result.name}</p>
+			<p class="before_text">to recognize outstanding performance in the category of</p>
+			<p class="event_name">{event.name}</p>
+			<p class="signature_block">
+				<span class="signature">Thomas Beck</span>
+				<span class="position">NYCFL President</span>
+			</p>
+			<p class="date_block">
+				<span class="signature-date">{tournament.shortDate}</span>
+				<span class="date-label">Date</span>
+			</p>
+		</div>
+	</div>
 </div>
 <div style="page-break-after: always; visibility: hidden"></div>
 {/for}
@@ -162,9 +166,9 @@ In the first version of this, I had several border images to produce different p
 @Produces("image/svg+xml")  
 @PermitAll  
 public String getBackgroundImage(  
-    @QueryParam("color") @DefaultValue("ffffff") String color,  
-    @QueryParam("color2") @DefaultValue("323131") String color2,  
-    @QueryParam("color3") @DefaultValue("323131") String color3  
+	@QueryParam("color") @DefaultValue("ffffff") String color,  
+	@QueryParam("color2") @DefaultValue("323131") String color2,  
+	@QueryParam("color3") @DefaultValue("323131") String color3  
 )
 ```
 
@@ -172,19 +176,19 @@ And we could reference this endpoint in CSS like this:
 
 ```css
 .certificate_border.gold {
-    background-image: url('/certs/background.svg?color=D4AF37');
+	background-image: url('/certs/background.svg?color=D4AF37');
 }
 .certificate_border.black {
-    background-image: url('/certs/background.svg?color=D8D8FF');
+	background-image: url('/certs/background.svg?color=D8D8FF');
 }
 .certificate_border.silver {
-    background-image: url('/certs/background.svg?color=C0C0C0');
+	background-image: url('/certs/background.svg?color=C0C0C0');
 }
 .certificate_border.bronze {
-    background-image: url('/certs/background.svg?color=CD7F32');
+	background-image: url('/certs/background.svg?color=CD7F32');
 }
 .certificate_border.red {
-    background-image: url('/certs/background.svg?color=C76C67');
+	background-image: url('/certs/background.svg?color=C76C67');
 }
 ```
 

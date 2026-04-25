@@ -1,0 +1,36 @@
+---
+title: The Colloquy of Aelfric5578
+description: Ælfric of Eynsham was an English abbot and writer who lived in the late 10th and early 11th centuries and the namesake of my internet handle.  These are some articles I've written and want to share about various software development topics.  I hope you find them interesting and informative.
+---
+
+
+
+
+<article>
+  <h1><%= @item[:title] %></h1>
+<p>
+  Ælfric of Eynsham was an English abbot and writer who lived in the late 10th 
+and early 11th centuries. He was also a teacher and wrote one of the first grammars 
+of Old English. In high school, I wrote a speech for a competition that referenced Ælfric
+and his it changed the trajectory of my life. Since then, I've used the handle of Aelfric5578 
+on various online platforms. I thought it would be fun to name this page after one of
+his most famous works.  
+</p>
+<p>
+These are some articles I've written and want to share about various software development topics. 
+I hope you find them interesting and informative. The colloquy was a series of dialogues.  It all begins with a 
+question. 
+</p>
+
+<% 
+items = items_with_tag('colloquy').sort { |x, y| y[:created_at] <=> x[:created_at] }
+items.each do |i| %>
+<section class="writing-link">
+
+<h2><%= link_to(i[:title], i) %></h2>
+<p class="context">
+<%= i[:created_at] %> <br>
+<%= i[:description]%></p>
+</section>
+<% end %>
+</article>
