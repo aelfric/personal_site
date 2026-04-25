@@ -109,6 +109,10 @@ route '/voluspa/*/' do
 	item.identifier.chop + '.' + item[:extension]
 end
 
+route '/colloquy/*/' do
+  item.identifier.to_s.gsub(' ', '-').downcase + 'index.html'
+end
+
 route '/**/*' do
   if item.binary?
     # Write item with identifier /foo/ to /foo.ext
@@ -117,7 +121,7 @@ route '/**/*' do
 	  item.identifier.chop + '.js'
   else
     # Write item with identifier /foo/ to /foo/index.html
-    item.identifier.to_s.gsub(' ', '-').downcase + 'index.html'
+    item.identifier + 'index.html'
   end
 end
 
