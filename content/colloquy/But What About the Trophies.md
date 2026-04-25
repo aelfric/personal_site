@@ -4,6 +4,7 @@ description:  The is the first of a series of articles about a software applicat
 tags: stuff_i_wrote, colloquy
 img: https://www.frankriccobono.com/assets/images/trophies.jpg
 created_at: 2026-04-25
+kind: article
 -----
 ## Backstory
 It was the fall of 2020.  A new school year had just started, but amidst the continuing pandemic safety measures, we in the speech and debate community were wondering whether we would be able to continue the activity in some form or another.  Thanks to a video platform developed that summer by the National Speech and Debate Association, we were fairly confident we could hold virtual tournaments, but we had another practical issue: how would we recognize the winners?
