@@ -23,7 +23,7 @@ question.
 </p>
 
 <% 
-items = items_with_tag('colloquy').sort { |x, y| y[:created_at] <=> x[:created_at] }
+items = sorted_articles.select { |a| a[:tags] && a[:tags].include?("colloquy")}
 items.each do |i| %>
 <section class="writing-link">
 
