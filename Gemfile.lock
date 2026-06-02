@@ -122,10 +122,12 @@ GEM
     reline (0.6.3)
       io-console (~> 0.5)
     rexml (3.4.4)
-    rouge (4.7.0)
+    rouge (5.0.0)
+      strscan (~> 3.1)
     slow_enumerator_tools (1.1.0)
     sorted_set (1.1.0)
       rbtree
+    strscan (3.1.8)
     temple (0.10.4)
     thor (1.5.0)
     tilt (2.7.0)
