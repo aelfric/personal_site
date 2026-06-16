@@ -1,6 +1,6 @@
 ---
 title:  But What About the Trophies?
-description:  The is the first of a series of articles about a software application I wrote originally to help out the New York Catholic Forensic League. It covers the motivations and core design of the system.
+description:  This is the first of a series of articles about a software application I wrote originally to help out the New York Catholic Forensic League. It covers the motivations and core design of the system.
 tags: stuff_i_wrote, colloquy
 img: https://frankriccobono.com/assets/images/trophies.jpg
 img_width: 1080
