@@ -1,4 +1,4 @@
-
+---
 title:  How do you Parse a Tournament?
 description: In this next article in my series about generating awards certificates for speech and debate tournaments, we learn that parsing CSV is easy, but interpreting data is hard.
 tags: stuff_i_wrote, colloquy
@@ -7,6 +7,7 @@ img_width: 1080
 img_height: 810
 created_at: 2026-06-16
 kind: article
+---
 
 This article is a continuation of my series on how I created the certificate generator for our local speech and debate league.  
 
