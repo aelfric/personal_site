@@ -63,7 +63,7 @@ article h1 {
   margin: 0.4783em 0;
 }
 
-article div + p {
+article div + p, article pre + p {
   margin-top: 1.3750em;
 }
 
@@ -137,10 +137,6 @@ article li {
   font-size: 16px;
   line-height: 1.3750em; /* 22px */
   margin: 0.6875em 0;
-}
-
-article > * + * {
-    margin-block-start: 1.5rem;
 }
 
 .svg-icon {
