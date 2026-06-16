@@ -139,6 +139,10 @@ article li {
   margin: 0.6875em 0;
 }
 
+article > * + * {
+    margin-block-start: 1.5rem;
+}
+
 .svg-icon {
   height: 1em;
   fill: currentColor;

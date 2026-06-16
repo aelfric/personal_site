@@ -104,6 +104,7 @@ One limitation, though, is that the `CSVRecord` class only returns string values
 I mentioned students can compete in multiple events, each of which has a somewhat different format.  Our second tournament of the year was the first one that season to offer an event called Duo Interpretation. In this event, as the name suggests, teams of two students perform a short acting piece together.  When it came time to ingest the results of this event, I noticed that the certificates only displayed the names of one of the two team members. 
 
 It turned out that in partner events, `Name 1` would contain the name of one partner, and a new column,  `Name 2`, would contain the other partner's name.  Because I was already using column names rather than indexes, the fix was localized.
+
 ```java
 List<String> headers = parse.getHeaderNames();
 
@@ -123,7 +124,8 @@ My troubles did not end there.  Even though we use various tiebreakers,  there a
 The tactical fix for this was:
 
 ```java
-result.place = Integer.parseInt(csvRecord.get("Ranking").replace("T-", ""));
+result.place = Integer.parseInt(
+    csvRecord.get("Ranking").replace("T-", ""));
 ```
 
 ## Is That Your Final Answer?
