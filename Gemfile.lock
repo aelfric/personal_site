@@ -31,7 +31,8 @@ GEM
     ffi (1.17.4-x86_64-darwin)
     ffi (1.17.4-x86_64-linux-gnu)
     ffi (1.17.4-x86_64-linux-musl)
-    haml (7.2.2)
+    haml (7.3.0)
+      prism (>= 1.1.0)
       temple (>= 0.8.2)
       thor
       tilt
@@ -105,6 +106,7 @@ GEM
     parallel (1.28.0)
     pastel (0.8.0)
       tty-color (~> 0.5)
+    prism (1.9.0)
     pry (0.16.0)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -128,7 +130,7 @@ GEM
     sorted_set (1.1.0)
       rbtree
     strscan (3.1.8)
-    temple (0.10.4)
+    temple (0.10.6)
     thor (1.5.0)
     tilt (2.8.0)
     tty-color (0.6.0)
